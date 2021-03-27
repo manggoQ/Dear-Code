@@ -1,0 +1,144 @@
+#define _CRT_SECURE_NO_WARNINGS 
+#include<stdlib.h>
+#include<stdio.h>
+
+#include<string.h>
+
+//结构体
+//char  int  double....
+//对人，书..——复杂对象
+//书名+作者+出版社+价格.....
+//复杂对象——结构体——自己创造出来的一种类型
+//创建一个结构类型
+struct Book //关于这个书的属性
+{
+	char name[20];//C语言程序设计 
+	// char虽然是字符类型 但在这里定义的是一个数组--字符串
+	short price;//35
+};
+int main()
+{
+	//利用结构体类型-创建一个该类型的结构体变量 b1
+	struct Book b1 = { "C语言程序设计", 35 };
+	strcpy(b1.name, "C++");//strcpy--string copy--字符串拷贝  库函数头文件为string.h
+	//把“C++”拷贝后放到b1.name中去
+	printf("%s\n", b1.name);
+	//b1.name = "C++";//无法改书名，name为定义的数组名，实质上为地址
+	//b1.price = 15;//price这里为变量
+
+	//struct Book* pb = &b1;
+	//利用指针pb打印书名和价格
+
+	//->  结构体指针->成员
+	//printf("%s\n", pb->name);//pb指向b1中的name
+	//printf("%d\n", pb->price);
+
+	//.  结构体变量.成员
+	//printf("书名：%s\n", (*pb).name);
+	//printf("价格：%d元\n", (*pb).price);
+
+
+	//printf("书名：%s\n", b1.name);
+	//printf("价格：%d元\n", b1.price);
+	//b1.price = 15;
+	//printf("打折后的价格为：%d元\n", b1.price);
+	system("pause");
+	return 0;
+}
+
+//分支结构（选择语句）
+//int main()
+//{
+//	int age = 78;
+//	if (age < 18)
+//		printf("未成年\n");
+//	else if (age >= 18 && age < 28)
+//		printf("青年\n");
+//	else if (age>=28&&age<50)
+//		printf("壮年\n");
+//	else if (age>=50&&age<90)
+//		printf("老年\n");
+//	else
+//		printf("长寿老人\n");
+//	/*int age = 20;
+//	if (age < 18)
+//		printf("未成年\n");
+//	else
+//		printf("成年\n");*/
+//
+//	system("pause");
+//	return 0;
+//}
+
+//int main()
+//{//判断一个数为奇为偶
+//	int i=20,j;
+//	j = i % 2;
+//	if (j == 0)
+//		printf("为偶数\n");
+//	else if (j==1)
+//		printf("为奇数\n");
+//
+//
+//	//int num = 4;
+//	//if (5==num)//一个等号叫做赋值  判断相等==
+//	//{
+//	//	printf("hehe\n");
+//	//}
+//	system("pause");
+//	return 0;
+//}
+
+
+//输出1-100之间的奇数
+//int main()
+//{
+//	int i = 1;
+//	while (i <= 100)
+//	{
+//		//printf("%d\n",i)//不用判断
+//		//i+=2;//通过1是奇数，接下来1往后加2的都为奇数
+//		if (i % 2 == 1)
+//			printf("%d\n", i);
+//		i++;
+//	}
+//
+//	system("pause");
+//	return 0;
+//}
+
+
+//switch语句多个分支
+int main()
+{
+	int d = 0;
+	scanf("%d", &d);
+	switch (d)
+    {
+	   case 1:
+		   printf("今天星期%d\n", d); break;
+	   case 2:
+		   printf("今天星期%d\n", d); break;
+	   case 3:
+		   printf("今天星期%d\n", d); break;
+	   case 4:
+		   printf("今天星期%d\n", d); break;
+	   case 5:
+		   printf("今天星期%d\n", d); break;
+	   case 6:
+		   printf("今天星期%d\n", d); break;
+	   case 7:
+		   printf("今天星期%d\n", d); break;
+	   default:
+		   printf("输入错误\n"); break;
+		}
+
+	system("pause");
+	return 0;
+}
+//总结：
+1、学习了结构体的自定义，对结构体的引用有了一定的了解，包括.和->结构体成员
+2、分支语句if...else..
+3、switch语句//注意default和break
+今天找到了scanf语句输入后按回车键无法运行的原因了——因为在%d后加了一个\n，运行时无法用回车键达到输出答案的作用
+删除后可正常运行
