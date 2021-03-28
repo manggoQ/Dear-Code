@@ -1,0 +1,82 @@
+//while循环
+//int main()
+//{
+//	//int i = 1;
+//	int i = 0;
+//	while (i <10)
+//	{
+//		i++;
+//		if (i == 5)
+//			//break;//1 2 3 4跳出
+//		continue;//终止循环中本次循环continue后面的代码，后面的代码不再执行，直接跳转到循环的判断部分，判断循环是否进行下一次
+//		//1 2 3 4 6 7 8 9 10跳过continue本次循环后面的代码，从while继续执行
+//		printf("%d\n", i);
+//		//i++;
+//	}
+//	system("pause");
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	//int ch = getchar(); //往里输入a
+//	//putchar(ch);//也能输出  a
+//	//printf("%c\n", ch);  //a 
+//
+//	int ch = 0;
+//    //ctrl+z
+//	//EOF——end of file -> -1 文件结束标志
+//
+//	while ((ch = getchar()) != EOF)
+//	{
+//		putchar(ch);
+//	}
+
+
+//	int ret = 0;//定义一个变量
+//	int ch = 0;
+//	char password[20] = { 0 };//先在里面赋些0
+//	printf("请输入密码:>");
+//	//输入后将数字放在输入缓冲区
+//	scanf("%s", password);//输入密码并放在password数组
+//	//缓冲区中还剩余一个‘\n’
+//	//读取一下‘\n’
+//	while ((ch = getchar()) != '\n')//建立一个循环将缓冲区的字符读取完
+//	{
+//		;//空语句
+//	}
+//	//getchar();
+//	printf("请确认（Y/N):>");
+//	ret = getchar();//这个变量接收getchar()返回值//Y/N
+//	if (ret == 'Y')
+//	{
+//		printf("确认成功\n");
+//	}
+//	else
+//	{
+//		printf("放弃确认\n");
+//	}
+//	system("pause");
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	int ch = 0;
+//	while ((ch = getchar()) != EOF)
+//	{//实现只输出数字0-9.字符等不会被输出，当输入ctrl+z时跳出循环
+//		if (ch<'0' || ch>'9')
+//			continue;
+//		putchar(ch);
+//	}
+//	system("pause");
+//	return 0;
+//}
+
+
+
+总结：今天学习了while循环和for循环
+还有getchar()与putchar()
+!!!见识到空语句（就一个；）的使用
