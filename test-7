@@ -1,0 +1,173 @@
+//不要在循环体内部修改变量，防止循环失去控制
+//int main()
+//{
+//	int i = 0;
+//	for (i = 0; i <= 10; i++)
+//	{
+//		if (i == 5)//这里不是对i进行判断而是赋值，i=5 始终小于10 ，形成死循环
+//			printf("haha\n");
+//		printf("hehe\n");
+//	}
+//	system("pause");
+//	return 0;
+//}
+
+
+
+
+//int main()
+//{
+//	int arr[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+//	int i = 0;
+//	//10次循环  10次打印  10个元素
+//	for (i = 0; i < 10; i++)//前闭后开区间
+//	{
+//		printf("%d\n",arr[i]);
+//	}
+//	system("pause");
+//	return 0;
+//}
+
+
+
+//int main()
+//{
+//	for (;;)//括号里初始、判断、条件都能被省略； 判断被省略后——恒为真
+//	{
+//		printf("hehe\n");//输出死循环
+//	}
+//	system("pause");
+//	return 0;
+//}
+
+
+
+//int main()
+//{
+//	int i = 0;
+//	int j = 0;
+//	for (; i < 10; i++)
+//	{
+//		for (; j < 10; j++)
+//		{
+//			printf("hehe\n");//删掉括号内的初始条件后输出10次
+//		}
+//	}//10次*10次=100次循环
+//	system("pause");
+//	return 0;
+//}
+
+
+
+//int main()
+//{
+//	int x, y;
+//	for (x = 0, y = 0; x < 2 && y < 5; ++x, y++)//两个循环变量
+//	{
+//		printf("haha\n");
+//	}
+//	system("pause");
+//	return 0;
+//}
+
+
+
+//int main()
+//{
+//	int x=0, y=0;
+//	for (x = 0, y = 0;y = 0; x++, y++)//循环0次
+//		//这里判断的y=0一个等号为赋值，0为假不进入循环
+//		//如果y=1为真，为死循环
+//		y++;                         
+//	system("pause");
+//	return 0;
+//}
+
+
+
+//int main()
+//{//1-10
+//	int i = 1;
+//	do
+//	{
+//		if (i == 5)
+//			//break;//1 2 3 4跳出循环
+//			continue;//1 2 3 4死循环
+//		printf("%d\n", i);
+//		i++;
+//	}
+//	while (i <= 10);
+//	
+//	system("pause");
+//	return 0;
+//}
+
+
+
+//int main()
+//{//n的阶乘
+//	int i = 0,n=0;
+//    int s = 1;
+//	scanf("%d", &n);
+//	for (i = 1; i <=n; i++)
+//	{
+//		s = s*i;
+//	}
+//	printf("%d\n", s);
+//	system("pause");
+//	return 0;
+//}
+
+
+
+//int main()
+//{//n的阶乘
+//	int i = 0, n = 0;
+//	int s = 1;
+//	int sum = 0;
+//	for (n = 1; n <=3; n++)
+//	{
+//		s = 1;//把s置一，消除累积效果
+//		for (i = 1; i <= n; i++)
+//		{
+//			s = s*i;
+//		}//n的阶乘
+//		sum = sum + s;
+//	}
+//	//s=1*1=1
+//	//s=1*1*2=2
+//	//s=2*1*2*3=12    应先把s置1
+//	printf("sum=%d\n", sum);
+//	system("pause");
+//	return 0;
+//}
+
+
+int main()
+{//1!+2!+3!+4!+5!+6!+7!+8!+9!+10!
+	int i = 0, n = 0;
+	int s = 1;
+	int sum = 0;
+	for (n = 1; n <= 10; n++)
+	{
+		
+			s = s*n;//s的值累积
+			//s=1*1
+			//s=1*2=2
+			//s=2*3=6
+			sum = sum + s;//9
+		//n的阶乘
+	
+	}
+	
+	printf("sum=%d\n", sum);
+	system("pause");
+	return 0;
+}
+
+
+
+//for循环  do while循环
+总结：1、不要在循环体内部修改变量，防止循环失去控制
+      2、for语句的括号里初始、判断、条件都能被省略； 判断语句被省略后——恒为真--死循环
+      3、注意判断语句=为赋值；==才为判断
