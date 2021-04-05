@@ -1,0 +1,187 @@
+//函数
+//int Add(int x,int y)
+//{
+//	int m=0;
+//     m = x + y;
+//	 return m;//返回的是一个整型 函数开头也要定义整型
+//
+//}
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	int sum=Add(a, b);//a,b输入参数  返回值m放到sum
+//	printf("sum=%d\n", sum);
+//	system("pause");
+//	return 0;
+//}
+
+
+
+//strcpy
+#include<string.h>
+//int main()
+//{
+//	char arr1[] = "C语言程序设计";
+//	char arr2[] = "计算机导论";
+//	// 计算机导论\0设计——\0终止符号字符串打印遇到\0停止打印
+//	// 计算机导论将C语言程序覆盖后面还有设计
+//	strcpy(arr1, arr2);
+//将arr2中的字符串包括\0复制后拷贝到arr1中
+//	printf("%s\n", arr1);
+//	printf("%s\n", arr2);//都输出计算机导论
+//	//strlen-- string length--字符串长度
+//	//strcpy-- string copy -- 字符串拷贝
+//	system("pause");
+//	return 0;
+//}
+
+
+
+//memset  
+//int main()
+//{
+//	char arr[] = "hello world!";
+//	memset( arr, '*', 5);
+//	printf("%s\n", arr);
+//	//***** world!
+//	system("pause");
+//	return 0;
+//}
+
+
+
+
+
+//函数比较两个数 输出较大值
+//int max(int x,int y)
+//{
+//	int z = 0;
+//	if (x > y)
+//	{
+//		z = x;
+//	}
+//	else if(x<y){
+//		z = y;
+//	}
+//	else{
+//		printf("相等\n");
+//	}
+//	return z;
+//}
+//int main()
+//{
+//	int a = 0, b = 0;
+//	int m = 0;
+//	printf("输入两个数：");
+//	scanf("%d %d", &a, &b);
+//	m = max(a, b);
+//	printf("较大值为：%d\n", m);
+//	system("pause");
+//	return 0;
+//}
+
+
+
+
+//两个数比较
+//定义函数
+//int get_max(int x, int y)
+//{
+//	if (x > y)
+//		return x;
+//	else 
+//		return y;
+//	
+//}
+//int main()
+//{
+//	int max = 0;
+//	int a = 10;
+//	int b = 20;
+//	//函数的使用
+//	max=get_max(a, b);
+//	printf("max= %d\n", max);
+//	max = get_max(300,100);
+//	printf("max= %d\n", max);
+//	system("pause");
+//	return 0;
+//}
+
+
+//交换两个数
+
+//int main()
+//{
+//	int a =0;
+//	int b = 0;
+//	printf("输入a 与b的值：");
+//	scanf("%d %d",&a,&b);
+//	int tmp = 0;
+//	tmp = a;
+//	a = b;
+//	b = tmp;
+//	printf("交换后 a=%d  b=%d\n", a,b);
+//	system("pause");
+//	return 0;
+//}
+
+
+
+//函数交换两个数——失败
+//void  swap1(int x, int y)//不需要返回值
+//{
+//	int tmp = 0;
+//	tmp = x;
+//	x = y;
+//	y = tmp;//这样写交换不了
+//
+//}
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	printf("a=%d b=%d\n", a, b);
+//	swap(a, b);
+//	//a,b和x,y没有关系
+//	//a,b存储地址跟x,y不一样 赋值过去互不影响 a,b的值不交换
+//	printf("a=%d b=%d\n", a, b);
+//	system("pause");
+//	return 0;
+//}
+
+//函数和指针联系起来
+//int main()
+//{
+//	int a = 10;
+//	int* pa=&a;//pa指针地址 取a地址
+//	*pa=20;//解引用操作
+//	printf("a=%d\n", a);
+//	system("pause");
+//	return 0;
+//}
+
+
+void swap2(int* pa,int* pb)
+{
+	int tmp = 0;
+	tmp = *pa;//*pa--a
+	*pa = *pb;
+	*pb = tmp;
+}
+int main()
+{
+	int a = 10;
+	int b = 20;
+	printf("a=%d  b=%d\n", a,b);
+	swap2(&a,&b);
+	printf("a=%d  b=%d\n", a, b);
+	system("pause");
+	return 0;
+}
+
+
+总结：
+1、C语言中有许多的库函数，要学会利用工具，学会调用不同功能的函数——注意添加头文件
+2、自定义函数中需要函数名，返回值类型和函数参数，都需要自己定义
+3、函数定义中能用指针来指向主函数中需要被自定义函数调用的变量，如swap2函数
