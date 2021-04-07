@@ -1,0 +1,190 @@
+//函数的递归
+//递归常见的错误：栈溢出
+//int main()
+//{
+//	printf("hello world!\n");
+//	main();
+//	system("pause");
+//	return 0;
+//}
+
+
+//void print(int n)
+//{
+//	if (n > 9)//不为个数
+//	{
+//		print(n / 10);
+//	}printf("%d ", n % 10);
+//}
+//int main()
+//{
+//	unsigned int num = 0;
+//	scanf("%d", &num);//1234
+//	//递归
+//	print(num);
+//	//print(1234)
+//	//print(123) 4
+//	//print(12) 3 4
+//	//print(1) 2 3 4
+//	system("pause");
+//	return 0;
+//}
+
+
+
+
+//求字符串长度
+//#include<string.h>
+//int main()
+//{
+//	char arr[] = "hello world";
+//	int len = strlen(arr);
+//	printf("%d\n", len);
+//	system("pause");
+//	return 0;
+//}
+
+
+
+
+//int my_strlen(char* str)
+//{//计算字符串的长度
+//	//从字符开头往后找\0，不是\0指针往后移，字符串长度加一，直到指向\0
+//	int n = 0;
+//	while(*str != '\0')
+//	{
+//		n++;
+//		str++;//指针往后移一位
+//	}
+//	return n;
+//}
+
+//递归的方法
+//int my_strlen(char* str)
+//{
+//	//my_strlen("hei")
+//	//1+my_strlen("ei")
+//	//1+1+my_strlen("i")
+//	//1+1+1+my_strlen("")
+//	if (*str != '\0')
+//		return 1 + my_strlen(str + 1);
+//	else
+//		return 0;
+//}
+//int main()
+//{
+//	char arr[] = "hello world";
+//	int len = my_strlen(arr);
+//	//arr是数组，数组传参，传过去的不是整个数组，而是第一个元素的地址
+//	printf("len=%d\n", len);
+//	system("pause");
+//	return 0;
+//}
+
+
+
+//求n的阶乘
+//int Fac1(int n)
+//{
+//	int i = 0;
+//	int ret = 1;
+//	for (i = 1; i <= n; i++)
+//	{
+//		ret *= i;
+//	}
+//	return ret;
+//}
+
+//递归
+//int Fac2(int n)
+//{
+//	if (n <= 1)
+//		return 1;
+//	else 
+//		return  n*Fac2(n - 1);
+//}
+//int main()
+//{
+//	int n = 0;
+//	int ret = 0;
+//	scanf("%d", &n);
+//	//ret=Fac1(n);//循环的方式
+//	ret = Fac2(n);
+//	printf("ret=%d\n", ret);
+//	system("pause");
+//	return 0;
+//}
+
+
+
+
+//斐波那契数列
+//1 1 2 3 5 8 13 21 34 55......
+
+//描述第n个斐波那契数的时候
+//效率低 重复率高
+//50
+//49 48
+//48 47 47 46
+//47 46 46 45 46 45 45 44
+//......
+
+//int count = 0;
+//int fib(int n)
+//{
+//	if (n == 3)//测试第三个斐波那契数的计算次数
+//	{
+//		count++;
+//	}
+//	if (n <= 2)
+//		return 1;
+//	else
+//		return  fib(n - 1) + fib(n - 2);
+//}
+
+
+//int fib(int n)
+//{
+//	int a = 1;
+//	int b = 1;
+//	int c = 1;
+//	while (n > 2)
+//	{
+//		c = a + b;
+//		a = b;
+//		b = c;
+//		n--;
+//	}
+//	return c;
+//}
+//int main()
+//{
+//	int n = 0;
+//	int ret = 0;
+//	scanf("%d", &n);
+//	ret = fib(n);
+//	printf("ret=%d\n", ret);
+//	//printf("%d\n", count);
+//	system("pause");
+//	return 0;
+//}
+
+
+总结：
+1、递归在一些问题的解决中会更简单，但什么时候用循环什么时候用递归得分情况
+2、将代码分模块——头文件、函数体、主函数
+头文件：
+//防止同一个头文件被引用多次
+#ifndef __ADD_H__//如果ADD.H没有被定义过 下面的这些代码就要
+//如果被定义过——就为假，下面的代码就不被采用
+#define __ADD_H__
+
+//函数的声明
+int Add(int x, int y);
+
+#endif//在这里结束
+
+函数体：
+新建一个与头文件名相同的.c项——写函数体
+主函数：
+引用头文件的内容#include "add.h"
