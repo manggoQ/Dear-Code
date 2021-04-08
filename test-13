@@ -1,0 +1,143 @@
+//int main()
+//{
+//	//创建一个数组--存放整型--10个
+//	//int arr[10] = {1,2,3};//不完全初始化，剩下的元素默认初始化为0
+//	//char arr2[5] = {'a',98};//98会转化成ASCII码——b
+//	//不完全初始化
+//	//char arr3[5] = "ab";
+//
+//	char arr4[] = "abcdef";
+//	printf("%d\n", sizeof(arr4));//7
+//	//sizeof 计算arr所占空间的大小
+//	//7个元素--char 7*1=7
+//
+//	printf("%d\n", strlen(arr4));//6
+//	//strlen 求字符串长度--'\0'之前的字符个数
+//	//[a b c d e f \0]
+//
+//	//1、strlen和sizeof没有什么关联
+//    //2、strlen是求字符串长度的只能针对字符串求长度--库函数——使用得引用头文件
+//	//3、sizeof计算变量、数组、类型的大小--单位是字节——操作符
+//
+//	//char ch[n];[]中应放常量表达式
+//	//int n = 5;
+//	system("pause");
+//	return 0;
+//}
+
+
+
+
+//int main()
+//{
+//	char arr1[] = "abc";               //arr1  a b c \0
+//	char arr2[] = { 'a', 'b', 'c' };   //arr2  a b c
+//	printf("%d\n", sizeof(arr1));//4
+//	printf("%d\n", sizeof(arr2));//3
+//	printf("%d\n", strlen(arr1));//3
+//	printf("%d\n", strlen(arr2));//随机值
+//	system("pause");
+//	return 0;
+//}
+
+
+
+//int main()
+//{
+//	//char arr[] = "abcdef";//[a][b][c][d][e][f][\0]
+//	//int i = 0;
+//	//int len = strlen(arr);
+//	//for (i = 0; i < len; i++)
+//	//{
+//	//	printf("%c ", arr[i]);
+//	//}
+//
+//	int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	system("pause");
+//	return 0;
+//}
+
+
+
+//int main()
+//{
+//	int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+//	//数组在内存中是连续存放的
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("&arr[%d]=%p\n",i, &arr[i]);
+//	}
+//	system("pause");
+//	return 0;
+//}
+
+
+//二维数组
+//int main()
+//{
+//	//int arr[3][4] = {1,2,3,4,5};
+//	//一行放满后，剩下的放下一行
+//
+//	int arr[3][4] = { { 1, 2, 3 }, { 4, 5 } };
+//	//1,2,3放在第一行，4，5放在第二行
+//
+//	//int arr[3][] = { { 1, 2, 3, }, { 5,6,7,8 } };//err
+//	//二维数组的列绝对不能省略
+//
+//	int arr[][4] = { { 1, 2, 3, }, { 5, 6, 7, 8 } };
+//	//行能省略
+//
+//	//char ch[5][6];
+//	system("pause");
+//	return 0;
+//}
+
+//int main()
+//{
+//	int arr[3][4] = { { 1, 2, 3 }, { 4, 5 } };
+//	int i = 0;
+//	for (i = 0; i < 3; i++)//行数
+//	{
+//		int j = 0;
+//		for (j = 0; j < 4; j++)//列数
+//		{
+//			printf("%d ", arr[i][j]);//一行一行的打印
+//		}
+//		printf("\n");//一行打印完后换行
+//	}
+//	system("pause");
+//	return 0;
+//}
+
+
+int main()
+{
+	int arr[3][4] = { { 1, 2, 3 }, { 4, 5 } };
+	int i = 0;
+	for (i = 0; i < 3; i++)//行数
+	{
+		int j = 0;
+		for (j = 0; j < 4; j++)//列数
+		{
+			printf("&arr[%d][%d]%p\n",i,j, &arr[i][j]);
+		}
+	}
+	system("pause");
+	return 0;
+}
+
+
+总结：
+1、学习一维数组和二维数组的基础知识
+2、区分sizeof和strlen
+       strlen和sizeof没有什么关联
+       strlen是求字符串长度的只能针对字符串求长度--库函数——使用得引用头文件
+       sizeof计算变量、数组、类型的大小--单位是字节——操作符
